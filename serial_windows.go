@@ -62,7 +62,7 @@ func openPort(name string, baud int, databits byte, parity Parity, stopbits Stop
 	if err = setCommState(h, baud, databits, parity, stopbits); err != nil {
 		return nil, err
 	}
-	if err = setupComm(h, 512, 512); err != nil {
+	if err = setupComm(h, 8192, 8192); err != nil {
 		return nil, err
 	}
 	if err = setCommTimeouts(h, readTimeout); err != nil {
